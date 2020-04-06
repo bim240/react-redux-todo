@@ -21,8 +21,9 @@ body {
   justify-content: space-around;
 }
 .single_list {
-  width: 300px;
   display: flex;
+  align-items: center;
+  width: 300px;
   justify-content: space-around;
   padding: 10px 0;
 }

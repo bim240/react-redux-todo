@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import Todos from "./todos";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,10 +27,11 @@ class App extends React.Component {
           <input
             onChange={this.handleTodoInput}
             type="text"
-            class="newlist"
+            className="newlist"
             value={this.state.todoText}
           />
           <button onClick={this.addTodo}>Add New List</button>
+          <Todos />
         </div>
       </>
     );
