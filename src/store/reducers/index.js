@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-let initialState = {
+let initialState = JSON.parse(localStorage.getItem("state")) || {
   allTodos: [],
   activeTab: "all",
 };
