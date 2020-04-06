@@ -32,8 +32,12 @@ body {
   text-decoration: line-through;
 }
 .footer {
+  margin-top: 15px;
   width: 200px;
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
+}
+.active {
+  background-color: gray;
 }

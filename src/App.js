@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Todos from "./todos";
+import Footer from "./footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class App extends React.Component {
           />
           <button onClick={this.addTodo}>Add New List</button>
           <Todos />
+          <Footer />
         </div>
       </>
     );

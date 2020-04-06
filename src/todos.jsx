@@ -40,7 +40,7 @@ function filterTodo(allTodos, activeTab) {
     return allTodos;
   } else if (activeTab === "active") {
     return allTodos.filter((todo) => !todo.isDone);
-  } else if (activeTab === "complete") {
+  } else if (activeTab === "completed") {
     return allTodos.filter((todo) => todo.isDone);
   }
 }

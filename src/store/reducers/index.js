@@ -26,6 +26,27 @@ export default function todoReducer(state = initialState, action) {
         ...state,
         allTodos: state.allTodos.filter((todo) => todo.id !== action.id),
       };
+    case "all":
+      return {
+        ...state,
+        activeTab: action.type,
+      };
+    case "active":
+      return {
+        ...state,
+        activeTab: action.type,
+      };
+    case "completed":
+      return {
+        ...state,
+        activeTab: action.type,
+      };
+    case "clearCompleted":
+      return {
+        ...state,
+        allTodos: state.allTodos.filter((todo) => !todo.isDone),
+        activeTab: "all",
+      };
     default:
       return state;
   }
