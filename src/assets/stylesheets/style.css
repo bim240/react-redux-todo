@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  margin-top: 100px;
+}
+.todo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.newlist {
+  margin: 1rem;
+}
+
+.list {
+  /* border: 1px solid green; */
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.single_list {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.line_through {
+  text-decoration: line-through;
+}
+.footer {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}

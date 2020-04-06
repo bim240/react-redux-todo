@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { todoText: "" };
+  }
+
+  handleTodoInput = (e) => {
+    this.setState({ todoText: e.target.value });
+  };
+  addTodo = () => {
+    // using dispatch
+    this.props.dispatch({ type: "add_todo", payload: this.state.todoText });
+    // add out todo to redux store
+    this.setState({ todoText: "" });
+  };
+
+  render() {
+    return (
+      <>
+        {" "}
+        <div className="todo_container">
+          <input
+            onChange={this.handleTodoInput}
+            type="text"
+            class="newlist"
+            value={this.state.todoText}
+          />
+          <button onClick={this.addTodo}>Add New List</button>
+        </div>
+      </>
+    );
+  }
 }
 
-export default App;
+function mapStateToProps(state) {
+  // console.log(state);
+  return { allTodos: state.allTodos };
+}
+
+export default connect(mapStateToProps)(App);
